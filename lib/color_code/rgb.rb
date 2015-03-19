@@ -20,7 +20,7 @@ module ColorCode
 
     private
     def parse_code(code)
-      [0, 0, 0] unless md = code.match(/^#([\d]{2})([\d]{2})([\d]{2})$/)
+      [0, 0, 0] unless md = code.match(/^#([a-f0-9]{2})([a-f0-9]{2})([a-f0-9]{2})$/)
       md[1..3].map(&:hex)
     end
   end
