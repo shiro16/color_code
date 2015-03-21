@@ -1,5 +1,3 @@
-require "color_code/version"
-
-module ColorCode
-  # Your code goes here...
-end
+require 'color_code/version'
+require 'color_code/rgb'
+require 'color_code/hsl'
