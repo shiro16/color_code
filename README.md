@@ -38,7 +38,7 @@ hsl.to_hash # => { h: 0, s: 100, l: 50 }
 
 convert RGB to HSL
 
-``ruby
+```ruby
 rgb = ColorCode::RGB.new(r: 255, g: 0, b: 0) 
 rgb.to_s # => '#ff0000'
 hsl = rgb.to_hsl
