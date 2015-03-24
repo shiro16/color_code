@@ -56,7 +56,7 @@ rgb.to_s # => '#ff0000'
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/color_code/fork )
+1. Fork it ( https://github.com/shiro16/color_code/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
