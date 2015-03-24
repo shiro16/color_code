@@ -43,7 +43,7 @@ module ColorCode
             when @b
               60 * ((@r - @g) / (max - min)) + 240
             end
-      hue + 360 if hue < 0
+      hue += 360 if hue < 0
       hue.round
     end
 
@@ -53,7 +53,7 @@ module ColorCode
       saturation = if converge < 128
                      (max - min).quo(max + min).to_f
                    else
-                     (max - min).quo(510 - max + min).to_f
+                     (max - min).quo(510 - max - min).to_f
                    end
       (saturation * 100).round
     end
