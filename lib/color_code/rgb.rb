@@ -37,17 +37,18 @@ module ColorCode
       return 0 if @r == @g && @g == @b
       hue = case max
             when @r
-              60 * ((@g - @b) / (max - min))
+              60 * ((@g - @b).quo(max - min).to_f)
             when @g
-              60 * ((@b - @r) / (max - min)) + 120
+              60 * ((@b - @r).quo(max - min).to_f) + 120
             when @b
-              60 * ((@r - @g) / (max - min)) + 240
+              60 * ((@r - @g).quo(max - min).to_f) + 240
             end
       hue += 360 if hue < 0
       hue.round
     end
 
     def s
+      return 0 if max == min
       converge = (max + min) / 2
 
       saturation = if converge < 128
