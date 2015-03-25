@@ -47,28 +47,28 @@ module ColorCode
       case @h
       when 0...60
         r = max
-        g = (@h / 60) * (max - min) + min
+        g = (@h.quo(60).to_f) * (max - min) + min
         b = min
       when 60...120
-        r = ((120 - @h) / 60) * (max - min) + min
+        r = ((120 - @h).quo(60).to_f) * (max - min) + min
         g = max
         b = min
       when 120...180
         r = min
         g = max
-        b = ((@h - 120) / 60) * (max - min) + min
+        b = ((@h - 120).quo(60).to_f) * (max - min) + min
       when 180...240
         r = min
-        g = ((240 - @h) / 60) * (max - min) + min
+        g = ((240 - @h).quo(60).to_f) * (max - min) + min
         b = max
       when 240...300
-        r = ((@h - 240) / 60) * (max - min) + min
+        r = ((@h - 240).quo(60).to_f) * (max - min) + min
         g = min
         b = max
       when 300..360
         r = max
         g = min
-        b = ((360 - @h) / 60) * (max - min) + min
+        b = ((360 - @h).quo(60).to_f) * (max - min) + min
       end
       [r.round, g.round, b.round]
     end
