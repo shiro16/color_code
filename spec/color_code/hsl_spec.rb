@@ -62,32 +62,32 @@ describe ColorCode::HSL do
 
         it 'hue 0-59' do
           hsl = ColorCode::HSL.new(h: 30, s: 50, l: luminance)
-          expect(hsl.send(:convert_rgb)).to eq([96, 32, 32])
+          expect(hsl.send(:convert_rgb)).to eq([96, 64, 32])
         end
 
         it 'hue 60-119' do
           hsl = ColorCode::HSL.new(h: 90, s: 50, l: luminance)
-          expect(hsl.send(:convert_rgb)).to eq([32, 96, 32])
+          expect(hsl.send(:convert_rgb)).to eq([64, 96, 32])
         end
 
         it 'hue 120-179' do
           hsl = ColorCode::HSL.new(h: 150, s: 50, l: luminance)
-          expect(hsl.send(:convert_rgb)).to eq([32, 96, 32])
+          expect(hsl.send(:convert_rgb)).to eq([32, 96, 64])
         end
 
         it 'hue 180-239' do
           hsl = ColorCode::HSL.new(h: 210, s: 50, l: luminance)
-          expect(hsl.send(:convert_rgb)).to eq([32, 32, 96])
+          expect(hsl.send(:convert_rgb)).to eq([32, 64, 96])
         end
 
         it 'hue 240-299' do
           hsl = ColorCode::HSL.new(h: 270, s: 50, l: luminance)
-          expect(hsl.send(:convert_rgb)).to eq([32, 32, 96])
+          expect(hsl.send(:convert_rgb)).to eq([64, 32, 96])
         end
 
         it 'hue 300-359' do
           hsl = ColorCode::HSL.new(h: 330, s: 50, l: luminance)
-          expect(hsl.send(:convert_rgb)).to eq([96, 32, 32])
+          expect(hsl.send(:convert_rgb)).to eq([96, 32, 64])
         end
       end
 
@@ -96,32 +96,32 @@ describe ColorCode::HSL do
 
         it 'hue 0-59' do
           hsl = ColorCode::HSL.new(h: 30, s: 50, l: luminance)
-          expect(hsl.send(:convert_rgb)).to eq([223, 159, 159])
+          expect(hsl.send(:convert_rgb)).to eq([223, 191, 159])
         end
 
         it 'hue 60-119' do
           hsl = ColorCode::HSL.new(h: 90, s: 50, l: luminance)
-          expect(hsl.send(:convert_rgb)).to eq([159, 223, 159])
+          expect(hsl.send(:convert_rgb)).to eq([191, 223, 159])
         end
 
         it 'hue 120-179' do
           hsl = ColorCode::HSL.new(h: 150, s: 50, l: luminance)
-          expect(hsl.send(:convert_rgb)).to eq([159, 223, 159])
+          expect(hsl.send(:convert_rgb)).to eq([159, 223, 191])
         end
 
         it 'hue 180-239' do
           hsl = ColorCode::HSL.new(h: 210, s: 50, l: luminance)
-          expect(hsl.send(:convert_rgb)).to eq([159, 159, 223])
+          expect(hsl.send(:convert_rgb)).to eq([159, 191, 223])
         end
 
         it 'hue 240-299' do
           hsl = ColorCode::HSL.new(h: 270, s: 50, l: luminance)
-          expect(hsl.send(:convert_rgb)).to eq([159, 159, 223])
+          expect(hsl.send(:convert_rgb)).to eq([191, 159, 223])
         end
 
         it 'hue 300-359' do
           hsl = ColorCode::HSL.new(h: 330, s: 50, l: luminance)
-          expect(hsl.send(:convert_rgb)).to eq([223, 159, 159])
+          expect(hsl.send(:convert_rgb)).to eq([223, 159, 191])
         end
       end
     end
