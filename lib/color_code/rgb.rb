@@ -24,7 +24,11 @@ module ColorCode
     end
 
     def to_hsl
-      ColorCode::HSL.new(h: h, s:s, l:l)
+      ColorCode::HSL.new(h: h, s:hsl_s, l:l)
+    end
+
+    def to_hsv
+      ColorCode::HSV.new(h: h, s:hsv_s, v:v)
     end
 
     private
@@ -34,7 +38,7 @@ module ColorCode
     end
 
     def h
-      return 0 if @r == @g && @g == @b
+      return 0 if max == min
       hue = case max
             when @r
               60 * ((@g - @b).quo(max - min).to_f)
@@ -47,7 +51,7 @@ module ColorCode
       hue.round
     end
 
-    def s
+    def hsl_s
       return 0 if max == min
       converge = (max + min) / 2
 
@@ -59,10 +63,22 @@ module ColorCode
       (saturation * 100).round
     end
 
+    def hsv_s
+      if max.zero?
+        0
+      else
+        (max - min) / max.to_f * 100
+      end
+    end
+
     def l
       luminance = (max + min).quo(2).to_f
       luminance = luminance.quo(255).to_f * 100
       luminance.round
+    end
+
+    def v
+      (max.quo(255).to_f * 100).round
     end
 
     def max

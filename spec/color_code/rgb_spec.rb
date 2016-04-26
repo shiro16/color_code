@@ -101,8 +101,8 @@ describe ColorCode::RGB do
       end
     end
 
-    describe '#s' do
-      subject { rgb.send(:s) }
+    describe '#hsl_s' do
+      subject { rgb.send(:hsl_s) }
 
       context 'converge under 128' do
         let(:rgb) { ColorCode::RGB.new(r: 150, g: 100, b: 100) }
