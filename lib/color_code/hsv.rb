@@ -41,7 +41,7 @@ module ColorCode
     end
 
     def convert_min
-      (@s / 100.to_f * max - max) * -1
+      (@s / 100.to_f * convert_max - convert_max) * -1
     end
   end
 end
