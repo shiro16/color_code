@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-RGB class
+### RGB class
 
 ```ruby
 rgb = ColorCode::RGB.new(r: 255, g: 0, b: 0)
@@ -28,7 +28,15 @@ rgb.to_s # => '#ff0000'
 rbg.to_hash # => { r: 255, g: 0, b: 0 }
 ```
 
-HSL class
+### HSV class
+
+```ruby
+hsv = ColorCode::HSV.new(h: 0, s: 100, v: 100)
+hsv.to_s # => '#ff0000'
+hsv.to_hash # => { h: 0, s: 100, v: 100 }
+```
+
+### HSL class
 
 ```ruby
 hsl = ColorCode::HSL.new(h: 0, s: 100, l: 50)
@@ -36,23 +44,42 @@ hsl.to_s # => '#ff0000'
 hsl.to_hash # => { h: 0, s: 100, l: 50 }
 ```
 
-convert RGB to HSL
+### convert RGB to HSV
 
 ```ruby
-rgb = ColorCode::RGB.new(r: 255, g: 0, b: 0) 
+rgb = ColorCode::RGB.new(r: 255, g: 0, b: 0)
 rgb.to_s # => '#ff0000'
-hsl = rgb.to_hsl
-hsl.to_s # => '#ff0000' 
+hsv = rgb.to_hsv
+hsv.to_s # => '#ff0000'
 ```
 
-convert HSL to RGB
+### convert HSL to RGB
 
 ```ruby
-hsl = ColorCode::HSL.new(h: 0, s: 100, l: 50) 
+hsv = ColorCode::HSV.new(h: 0, s: 100, v: 100)
+hsv.to_s # => '#ff0000'
+rgb = hsv.to_rgb
+rgb.to_s # => '#ff0000'
+```
+
+### convert RGB to HSL
+
+```ruby
+rgb = ColorCode::RGB.new(r: 255, g: 0, b: 0)
+rgb.to_s # => '#ff0000'
+hsl = rgb.to_hsl
+hsl.to_s # => '#ff0000'
+```
+
+### convert HSL to RGB
+
+```ruby
+hsl = ColorCode::HSL.new(h: 0, s: 100, l: 50)
 hsl.to_s # => '#ff0000'
 rgb = hsl.to_rgb
 rgb.to_s # => '#ff0000'
 ```
+
 
 ## Contributing
 
