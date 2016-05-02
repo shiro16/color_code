@@ -31,6 +31,10 @@ module ColorCode
       ColorCode::HSV.new(h: h, s:hsv_s, v:v)
     end
 
+    def distance(rgb)
+      Math.sqrt((@r - rgb.r)**2 + (@g - rgb.g)**2 + (@b - rgb.b)**2)
+    end
+
     private
     def parse_code(code)
       raise ArgumentError.new('invalid value') unless md = code.match(/^#([a-fA-F0-9]{2})([a-fA-F0-9]{2})([a-fA-F0-9]{2})$/)

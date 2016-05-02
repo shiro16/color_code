@@ -34,6 +34,15 @@ module ColorCode
       ColorCode::RGB.new(r: r, g: g, b: b)
     end
 
+    def distance(hsv)
+      diff = if @h > hsv.h
+               [@h - hsv.h, hsv.h - @h + 360].min
+             else
+               [hsv.h - @h, @h - hsv.h + 360].min
+             end
+      Math.sqrt(diff**2 + (@s - hsv.s)**2 + (@v - hsv.v)**2)
+    end
+
     private
     def convert_rgb
       max = @v * 255 / 100.to_f
